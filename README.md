@@ -1,4 +1,3 @@
-````markdown
 # 📄 PDF Andes Comprobante
 
 **PDF Andes Comprobante** es una aplicación web desarrollada con **Vite** y **Node.js**, diseñada para la **generación y visualización de comprobantes/facturas en PDF**.  

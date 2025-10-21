@@ -27,19 +27,6 @@ npm install
 npm run dev
 ```
 
-El servidor se iniciará en:
-
-```
-http://localhost:5173/
-```
-
-Para exponerlo en red local:
-
-```bash
-npm run dev -- --host
-```
-
-
 ## 📦 Requisitos previos
 
 * Node.js ≥ 18

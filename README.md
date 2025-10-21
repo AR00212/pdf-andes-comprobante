@@ -1,5 +1,3 @@
-## 🧾 `README.md` para **pdf-andes-comprobante**
-
 ````markdown
 # 📄 PDF Andes Comprobante
 

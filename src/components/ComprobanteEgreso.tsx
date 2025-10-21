@@ -1,7 +1,6 @@
 import React from 'react';
 import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
 
-// Estilos que replican EXACTAMENTE el diseño original
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
@@ -10,7 +9,6 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontFamily: 'Courier',
   },
-  // Header con 3 columnas
   headerRow: {
     flexDirection: 'row',
     marginBottom: 15,
@@ -62,7 +60,6 @@ const styles = StyleSheet.create({
   tcText: {
     fontSize: 8,
   },
-  // Sección de información
   infoSection: {
     bottom:20,
     marginBottom: 8,
@@ -75,7 +72,6 @@ const styles = StyleSheet.create({
   infoLabel: {
     fontWeight: 'bold',
   },
-  // Caja de concepto
   conceptBox: {
     borderWidth: 1,
     borderColor: '#000',
@@ -87,13 +83,11 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: 'bold',
   },
-  // Tabla
   table: {
     borderWidth: 1,
     borderColor: '#000',
     marginBottom: 10,
   },
-  // Encabezado de monedas (BOLIVIANOS / DOLARES)
   currencyHeader: {
     flexDirection: 'row',
     borderBottomWidth: 1,
@@ -121,7 +115,6 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: 'bold',
   },
-  // Sub-encabezado (CODIGO, DETALLE, DEBE, HABER)
   tableHeader: {
     flexDirection: 'row',
     borderBottomWidth: 1,
@@ -178,7 +171,6 @@ const styles = StyleSheet.create({
     fontSize: 7,
     fontWeight: 'bold',
   },
-  // Filas de datos, si se desea borra la tabla, borrar el border. columna dos
   dataRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
@@ -225,14 +217,12 @@ const styles = StyleSheet.create({
   cellText: {
     fontSize: 7,
   },
-  // Fila vacía grande
   emptyRow: {
     flexDirection: 'row',
     borderBottomWidth: 1,
     borderBottomColor: '#000',
     minHeight: 120,
   },
-  // Totales
   totalsRow: {
     flexDirection: 'row',
     minHeight: 20,
@@ -249,7 +239,6 @@ const styles = StyleSheet.create({
     fontSize: 8,
     fontWeight: 'bold',
   },
-  // Sección de firmas - ESTILOS COMPLETAMENTE NUEVOS
   signatureSection: {
     flexDirection: 'column',
     borderWidth: 1,
@@ -315,25 +304,21 @@ const ComprobanteEgreso = () => {
     <Document>
       <Page size="LETTER" style={styles.page}>
         
-        {/* Header con 3 columnas */}
         <View style={styles.headerRow}>
-          {/* Columna Izquierda - Logo */}
           <View style={styles.headerLeft}>
             <View style={styles.logoContainer}>
               <Image 
                 style={styles.logoImage}
-                src="./images/gamarra.png" // Reemplaza con la ruta de tu logo
+                src="./images/gamarra.png" //ruta del logo
               />
             </View> 
           </View>
           
-          {/* Columna Centro - Título */}
           <View style={styles.headerCenter}>
             <Text style={styles.title}>COMPROBANTE DE EGRESO</Text>
             <Text style={styles.fechaText}>Fecha: 09/09/2025</Text>
           </View>
           
-          {/* Columna Derecha - Hoja y CE */}
           <View style={styles.headerRight}>
             <Text style={styles.hojaText}>Hoja: 1</Text>
             <View style={styles.ceBox}>
@@ -343,7 +328,6 @@ const ComprobanteEgreso = () => {
           </View>
         </View>
 
-        {/* Información */}
         <View style={styles.infoSection}>
           <View style={styles.infoLine}>
             <Text style={styles.infoLabel}>A Favor de: </Text>
@@ -359,17 +343,14 @@ const ComprobanteEgreso = () => {
           </View>
         </View>
 
-        {/* Caja de Concepto */}
         <View style={styles.conceptBox}>
           <Text style={styles.conceptText}>
             HCO MSC2 SA: PAGO DE CETABOL INDUSTRIAS DE ACEITE SA SOL-2047 (ANALISIS DE FERTILIZANTE) S/VIA WEB
           </Text>
         </View>
 
-        {/* Tabla Principal */}
         <View style={styles.table}>
           
-          {/* Encabezado de Monedas */}
           <View style={styles.currencyHeader}>
             <View style={styles.currencyHeaderEmpty}></View>
             <View style={styles.currencyHeaderBolivianos}>
@@ -380,7 +361,6 @@ const ComprobanteEgreso = () => {
             </View>
           </View>
 
-          {/* Encabezado de Columnas */}
           <View style={styles.tableHeader}>
             <View style={styles.colCodigo}>
               <Text style={styles.headerText}>CODIGO</Text>
@@ -402,7 +382,6 @@ const ComprobanteEgreso = () => {
             </View>
           </View>
 
-          {/* Fila 1 */}
           <View style={styles.dataRow}>
             <View style={styles.cellCodigo}>
               <Text style={styles.cellText}>10203</Text>
@@ -433,7 +412,6 @@ const ComprobanteEgreso = () => {
             </View>
           </View>
 
-          {/* Fila 2 */}
           <View style={styles.dataRow}>
             <View style={styles.cellCodigo}>
               <Text style={styles.cellText}>10102</Text>
@@ -462,7 +440,6 @@ const ComprobanteEgreso = () => {
             </View>
           </View>
 
-          {/* Fila Vacía Grande */}
           <View style={styles.emptyRow}>
             <View style={styles.cellCodigo}></View>
             <View style={styles.cellDetalle}></View>
@@ -493,16 +470,12 @@ const ComprobanteEgreso = () => {
 
         </View>
 
-        {/* Sección de Firmas - ESTRUCTURA EXACTA COMO LA IMAGEN */}
         <View style={styles.signatureSection}>
-          {/* Fila superior con los campos NOMBRE, CI, FIRMA solo en la cuarta columna */}
           <View style={styles.signatureTopRow}>
-            {/* Columnas 1-3 vacías */}
             <View style={styles.signatureFieldCol}></View>
             <View style={styles.signatureFieldCol}></View>
             <View style={styles.signatureFieldCol}></View>
             
-            {/* Columna 4 con los campos */}
             <View style={styles.signatureFieldColLast}>
               <View style={styles.signatureField}>
                 <Text style={styles.signatureLabel}>NOMBRE:</Text>
@@ -519,7 +492,6 @@ const ComprobanteEgreso = () => {
             </View>
           </View>
           
-          {/* Fila inferior con los títulos */}
           <View style={styles.signatureBottomRow}>
             <View style={styles.signatureLabelCol}>
               <Text style={styles.signatureText}>PREPARADO</Text>
